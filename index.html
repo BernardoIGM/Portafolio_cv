@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafólio Bernardo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav> <!--menu de navegacao-->
+
+    <main id="inicio" class="cabecalho">
+
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQFX57q7-feQ1A/profile-displayphoto-shrink_400_400/B4EZTMnO.EHMAg-/0/1738599625613?e=1755734400&v=beta&t=xC4veu3r_aTHGcr1U81D1lFQS5QbQ75UHzOhzdoLUIo"
+            alt="foto de Bernardo Gutierrez" class="foto-perfil">
+        <h1> Bernardo Gutierrez </h1>
+        <p class="cabecalho-sub-titulo"> Desenvolvedor Front End</p>
+
+    </main> <!--minha foto e nome-->
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre min</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-parrafo">
+                Meu nome é Bernardo Gutierrez, sou de Santiago do Chile e moro no Brasil a mais de 10 anos. Atualmente
+                me encontro em uma fase empolgante da minha vida, estou em transição de carreira do setor educacional
+                para o desenvolvimento Fron-End. Após mais de 20 anos de experiencia como professor, gestor educacional
+                e líder de projetos, decidi me reinventar e investir no desenvolvimento front-end. Ao ser uma pessoa
+                detalhista sempre me senti ligado aos códigos da programação além de ser um amante da tecnologia e seu
+                impacto no mundo. Com o tempo estudando programação descobri que faz parte da minha personalidade,
+                explorar novos desafios e construir soluções criativas. Atualmente estou me especializando em Front-End
+                e fazendo um curso desenvolvedor Full Stack. Focado em seguir aperfeiçoando habilidades essenciais como
+                Html, Css e JavaScript. Me descrevo como um desenvolvedor apaixonado por criar interfaces bonitas e funcionais.
+                Estou em busca de oportunidades na área.
+            </p>
+        </div>
+    </section> <!--sobre mim-->
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+
+        <div class="projetos-caixa"> <!-- aqui estarao todos meus projetos -->
+
+            <div class="projetos-card">
+                <img src="img/foto projeto starbucks.png" alt="projeto1" class="projeto-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Starbucks Coffe</h3>
+                    <p class="parrafo-projetos">Pagina simples sobre Starbucks</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/foto projeto yt.png" alt="projeto2" class="projeto-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">YouTube</h3>
+                    <p class="parrafo-projetos">Estrutura fake de uma pagina de YouTube</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/Loja virtual.png" alt="projeto2" class="projeto-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja Virtual</h3>
+                    <p class="parrafo-projetos">Loja virtual com um carrossel de produtos</p>
+                </div>
+            </div>
+
+        </div> <!-- aqui terminam os projetos--->
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contatos-titulo">Entre em contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarEmail(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" id="nome" class="campo-form">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="digite sua mensagem" id="mensagem" rows="6"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar email</button>
+        </form>
+
+    </section> <!--aqui termina a section de contactos-->
+
+    <script>
+        function enviarEmail(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const emailDestino = 'bernardoigm@hotmail.com'; 
+
+            const assunto = encodeURIComponent(`Mensagem de ${nome}`);
+            const corpo = encodeURIComponent(`Olá! Me chamo ${nome},\n\n${mensagem}`);
+
+            const mailtoLink = `mailto:${emailDestino}?subject=${assunto}&body=${corpo}`;
+
+            window.location.href = mailtoLink;
+        }
+    </script>
+
+</body>
+
+</html>
